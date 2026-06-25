@@ -1,0 +1,4 @@
+threshold_hours,total_clusters,single_alert_clusters,multi_alert_clusters,alerts_in_multi_clusters,share_alerts_in_multi,avg_cluster_size,max_cluster_size,median_multi_cluster_span_h
+3,1463,1209,254,586,0.3265,1.227,7,2.063
+6,1170,797,373,998,0.556,1.534,19,4.028
+12,823,420,403,1375,0.766,2.181,75,8.643
