@@ -1,23 +1,7 @@
-﻿Reflection
+I initially considered analysing air raid alerts across Ukraine and comparing them with attacks. That was too broad for a two-day project, so I narrowed it to one defensible question: how clustered in time are alerts in Kyiv City, and how did that clustering vary across the war? The point was not just to produce charts, but to understand the rhythm of disruption. If alerts arrive in short-term series, then institutions, schools, and shelters face concentrated blocks of interrupted time rather than isolated events, which matters for planning and public communication.
 
+My first research question hid an assumption: that clustering had increased. Reframing it neutrally let the data speak, and it disagreed with that tidy story. Clustering was moderate (overall burstiness B = 0.13) and varied across years (cluster share 63% in 2022, 44% in 2023, 61% in 2024, 49% in 2025), rather than rising linearly.
 
+Inspired by *Team of Teams* by General Stanley McChrystal, Tantum Collins, David Silverman, and Chris Fussell, I used ChatGPT and Claude as complementary agents, not oracles. Claude helped generate and iterate the Python scripts; ChatGPT helped challenge assumptions, interpret outputs, and check whether conclusions were overstated. I compared their suggestions with real execution logs and rejected claims I could not verify, including AI warnings that did not match the actual output.
 
-My first instinct was to ask whether Kyiv alerts had become more clustered
-
-over time - a question that secretly assumed its own answer. That was the main
-
-thing that went wrong: a biased framing, plus an early temptation to
-
-over-engineer with heavy models and prediction. I adjusted by neutralising the
-
-question, auditing the data before touching analysis, and deliberately keeping
-
-methods simple. The audit caught real problems - duplicates, a city/oblast
-
-split, a mid-dataset granularity change - that I handled openly. The final
-
-version is better because it is honest: it uses two agreeing methods, reports a
-
-moderate and varying result instead of a tidy upward trend, and makes no
-
-claims the data cannot support.
+The iteration was concrete: separating Kyiv City from Kyivska oblast, removing 1,795 exact duplicate rows, capping the window before a December 2025 granularity change, and refusing change point detection, attack-event data, and causal claims to avoid scope creep. The final result is a focused, reproducible artifact. Next, I would compare alert burden with verified attack-event data under careful definitions, or build a planning dashboard for institutions.
